@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>JS Handson 6</title>
+    <style>
+        body {
+            background: radial-gradient(circle, rgb(11, 19, 47), rgb(177, 20, 20), black);
+        }
+
+        p,
+        ul {
+            color: skyblue;
+        }
+
+        b {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; font-weight: bold; color: white;">JavaScript Handson-6 (Problem Solving)</h1>
+    <hr>
+    <div class="container">
+
+      <p><b>Find the Smaller Angle</b>
+        PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time.
+
+        Note: You have to complete Minimal_Angle function. No need to take any input.</p>
+        <pre>
+          var Minimal_Angle = (h, m) => 
+{
+  const hourAngle = (h * 30) + (m * 0.5)
+  const minAngle = (m * 6)
+  let angle = Math.abs(hourAngle - minAngle)
+ 
+ if(angle > 180){
+   angle = 360 - angle
+   
+ }
+    
+  return angle
+};
+ 
+        </pre>
+        <hr>
+        <p><b>Check whether the year is Leap year or not.</b>
+          Write a program which takes an year 
+          N
+           as input from the user and find out whether the given year is a Leap Year or not.
+          
+          Note: You have to complete Check_Leap function. No need to take any input.</p>
+          <pre>
+            var Check_Leap = (year) => 
+{
+ if((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0) ){
+   return "Leap Year"
+ }
+ else{
+   return "Non Leap Year"
+ }
+  
+
+};
+          </pre>
+          <hr>
+
+          <p><b>Perfect Number Check.</b>
+            Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.
+
+            Now, You are given an integer 
+            N
+            , write a program to check whether the given number is a Perfect Number or not.
+            
+            Note: You have to complete Perfect _Check function. No need to take any input.</p>
+            <pre>
+              var Perfect_Check = (N) => 
+              {
+                sum = 0
+                if(N != 1 ){
+                for(i=1; i < N; i++){
+                  if(N % i === 0){
+                    sum = sum + i 
+                  }
+                }
+                
+                }
+                if(N === sum || N === 1){
+                  return "YES"
+                }
+                else{
+                  return "NO"
+                }
+                
+                    
+                      
+              };
+            </pre>
+<hr>
+<p><b>Reverse a Number.</b>
+  Write a program which takes a numebr 
+  N
+   as input from the user and You need to reverse the number.
+  
+  Note: You have to complete Reverse_Number function. No need to take any input.</p>
+  <pre>
+    var Reverse_Number = (N) => 
+{
+ sum=0
+ while(N>0){
+   b = N % 10
+   sum = sum * 10 + b
+   N = parseInt(N/10)
+ }
+ return sum
+   
+ 
+};
+  </pre>
+  <hr>
+  <p><b>Substring Check.</b>
+    You are given two strings 
+    S
+    1
+     and 
+    S
+    2
+    , you need to check whether the string S1 is a substring of string S2 or not.
+    
+    Note: You have to complete Substring_Check function. No need to take any input.</p>
+    <pre>
+      var Substring_Check = (S1, S2) => 
+{
+  S3 = S1.split(' ')
+  S4 = S2.split(' ')
+  count = 0
+ 
+ for(i=0; i<S3.length; i++){
+   for(j=0; j < S4.length; j++){
+     if(S3[i] === S4[j]){
+       count++
+     }
+   }
+ }
+ if(count>=1){
+   return "YES"
+ }
+ else{
+   return "NO"
+ }
+     
+};
+    </pre>
+    <hr>
+
+   </div>
+
+
+    <script src="./index.js"></script>
+
+
+</body>
+
+</html>
